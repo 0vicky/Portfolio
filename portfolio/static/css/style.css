@@ -1,0 +1,235 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black !important; /* Set background color to black */
+    color: white !important; /* Set text color to white */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #333 !important; /* Darker header background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    color: white !important; /* White color for header title */
+}
+
+.nav-links {
+    text-align: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: white !important; /* White color for navigation links */
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007BFF !important;
+}
+
+.container {
+    width: 80%;
+    margin: 150px auto 20px auto; /* Adjusted margin to account for fixed header */
+}
+
+/* Section styling */
+.section {
+    padding: 40px 0;
+    margin-top: 70px;
+    text-align: center;
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.welcome-text {
+    width: 50%;
+    text-align: left;
+}
+
+.welcome-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white !important; /* White color for welcome section title */
+}
+
+.welcome-text p {
+    font-size: 18px;
+    color: white !important; /* White color for paragraph text */
+}
+
+.profile-image {
+    width: 50%;
+    text-align: center;
+}
+
+.profile-img {
+    max-width: 100%;
+    border: none;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill {
+    padding: 20px;
+    border-radius: 5px;
+    color: white !important; /* White color for skill text */
+}
+
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px;
+    background-color: #333 !important; /* Dark background for projects */
+    color: white !important; /* White text color for project details */
+}
+
+.project h3 {
+    margin-bottom: 10px;
+    color: white !important; /* White color for project title */
+}
+
+.project p {
+    font-size: 16px;
+    text-align: left;
+    margin: 10px 0;
+    color: white !important; /* White color for project description */
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222 !important; /* Dark footer background */
+    color: white !important; /* White text color for footer */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    margin-top: 10px; /* Adds space between text and icons */
+}
+.social-icons a {
+    margin: 0 10px;
+    color: white !important;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #007BFF !important;
+}
+
+
+/* About & Contact Section - Box Style */
+.info-container {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #333;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.info-container p {
+    display: flex;
+    align-items: center; /* Vertically align the text with the icons */
+    gap: 10px; /* Space between icon and text */
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+.info-container i {
+    color: rgba(254, 86, 23, 1); /* Orange color for the icons */
+    font-size: 18px; /* Adjust icon size if needed */
+}
+
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+    max-width: 700px;
+}
+
+/* Typewriter effect */
+/* Ensure everything fits in one line */
+h4 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* h4 size */
+    font-weight: bold;
+}
+
+/* Ensure everything fits in one line */
+h4 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* h4 size */
+    font-weight: bold;
+}
+
+/* Add space between the words */
+h4 span {
+    margin-right: 0.2rem; /* Adjust this space as needed */
+}
+

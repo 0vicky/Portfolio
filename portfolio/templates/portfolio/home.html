@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ portfolio.name }} - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        /* Header Styling */
+        header {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        /* Title (Left Side) */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Navigation (Center) */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-grow: 1;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Social Icons (Right Side) */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+        }
+        .skills-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        .skill i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .fa-python { color: #FFD43B; } /* Yellow */
+        .fa-server { color: #0C4B33; } /* Green */
+        .fa-database { color: white; } /* White */
+        .fa-html5 { color: #E34F26; } /* Orange */
+        .fa-css3-alt { color: #1572B6; } /* Blue */
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Title (Left) -->
+        <!-- <div class="logo">{{ portfolio.name }}</div> -->
+
+        <!-- Navigation (Center) -->
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Social Icons (Right) -->
+        
+    </header>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="welcome-container">
+                <div class="welcome-text">
+                    <h2><span style="color: white;">I'm</span> <span style="color: rgba(254, 86, 23, 1);">Vignesh</span></h2>
+                    <h3 class="text-2xl md:text-3xl font-bold flex gap-2">
+                        <span style="color: rgba(254, 86, 23, 1);">I’m a </span>
+                        <span class="Typewriter"> Aspiring Python Developer</span>
+                    </h3>
+
+
+                    <p>{{ portfolio.summary }}</p>
+                    {% if portfolio.cv %}
+                        <a href="{{ portfolio.cv.url }}" download>
+                            <button style="background-color:  rgba(254, 86, 23, 1); color: white; font-size: 15px; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                                Download CV
+                            </button>
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="profile-image">
+                    <img src="{{ portfolio.image.url }}" alt="Profile Picture" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <br>
+            <br>
+            <h1><span style="color: white;"></span> <span style="color: rgba(254, 86, 23, 1); font-size:30px;">About Me</span></h1>
+            <div class="about-container">
+                <p>
+                    I am a graduate with a Bachelor of Computer Applications (BCA) degree and six months of experience as a Data Processing Executive at AnnexMed. I completed a Python and Django course with EduBridge, enhancing my programming and web development skills. Recently, I built a blog project using Django for user registration, forms, and models. Passionate about Python development, I am eager to apply my skills and grow in this field.
+                </p>
+            </div>
+        </section>
+        
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h1><span style="color: white;"></span> <span style="color: rgba(254, 86, 23, 1); font-size:30px;">My Skills</span></h1>
+            <div class="skills-container">
+                <br>
+                <div class="skills-row">
+                    <div class="skill"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="skill"><i class="fa-solid fa-server"></i> Django</div>
+                    <div class="skill"><i class="fa-solid fa-database"></i> SQL</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skill"><i class="fa-brands fa-html5"></i> HTML</div>
+                    <div class="skill"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+         <br>
+         <br>
+        <section id="projects" class="section">
+            <h1><span style="color: white;"></span> <span style="color: rgba(254, 86, 23, 1); font-size:30px;">Project</span></h1>
+            <br>
+            <br>
+            <br>
+            <div class="projects-container">
+                {% for project in projects %}
+                    <div class="project">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.link }}" target="_blank">Demo Live</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+         <br>
+        <section id="contact" class="section">
+            <h1><span style="color: white;"></span> <span style="color: rgba(254, 86, 23, 1); font-size:30px;">Contact</span></h1>
+            <br>
+            <br>
+            <div class="info-container">
+                <p><i class="fas fa-envelope" style="color: rgba(254, 86, 23, 1);"></i> {{ portfolio.email }}</p>
+                <p><i class="fas fa-phone-alt" style="color: rgba(254, 86, 23, 1);"></i> {{ portfolio.phone }}</p>
+                <p><i class="fas fa-map-marker-alt" style="color: rgba(254, 86, 23, 1);"></i> {{ portfolio.location }}</p>
+            </div>
+            
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Vignesh.  All rights reserved.</p>
+        <div class="social-icons">
+            <a href="{{ portfolio.github }}" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="{{ portfolio.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="{{ portfolio.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const offset = 100; // Adjust this value based on the header height
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
