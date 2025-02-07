@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 class Portfolio(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
@@ -11,7 +11,7 @@ class Portfolio(models.Model):
     linkedin = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     cv = models.FileField(upload_to='cvs/', blank=True)
-    image = models.ImageField(upload_to='images/', blank=True)
+    image = CloudinaryField('image', blank=True)
 
     def __str__(self):
         return self.name

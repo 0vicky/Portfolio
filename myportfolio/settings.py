@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 import dj_database_url
 
@@ -39,8 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
+    'cloudinary',
 ]
 
+CLOUDINARY = {
+    "cloud_name": "dhhxefmys",
+    "api_key": "732919185998163",
+    "api_secret": "q_4KBfZYPEOMTHw6GJPjzuWwQVo",  # Replace with actual API secret
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
