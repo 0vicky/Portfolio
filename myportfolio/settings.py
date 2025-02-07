@@ -45,13 +45,17 @@ INSTALLED_APPS = [
     'cloudinary',
 ]
 
-CLOUDINARY = {
-    "cloud_name": "dhhxefmys",
-    "api_key": "732919185998163",
-    "api_secret": "q_4KBfZYPEOMTHw6GJPjzuWwQVo",  # Replace with actual API secret
-}
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# Cloudinary Configuration
+cloudinary.config(
+    cloud_name=os.getenv("dhhxefmys"),
+    api_key=os.getenv("732919185998163"),
+    api_secret=os.getenv("q_4KBfZYPEOMTHw6GJPjzuWwQVo"),
+    secure=True
+)
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
