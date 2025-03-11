@@ -3,7 +3,7 @@
 🚀 A personal portfolio website built with Django to showcase my projects, skills, and contact details.
 
 ## 🔗 Live Demo  
-Check out my portfolio: https://portfolio-8-8dmq.onrender.com/
+Check out my portfolio: https://portfolio-onv2.onrender.com/
 
 ## 🛠️ Features  
 - **Project Showcase** – Displays my work with details and links.  
